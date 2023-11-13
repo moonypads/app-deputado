@@ -1,1 +1,14 @@
-<p>busca-deputado works!</p>
+<h3>Buscar deputado: </h3>
+<form [formGroup]="depForm">
+<label for="nome"> Nome: </label>
+<input type="text"  formControlName="nome">
+<input type="button" [disabled]="depForm.invalid" value="BUSCAR" (click)="buscar()">
+</form>
+<div class="resultado">
+    <ul class="dep" *ngFor="let dep of deputados">
+        <li> {{dep.nome}}</li>
+       <li> <img class="foto" [src]="dep.urlFoto"> </li>
+       <li> Estado: {{dep.siglaUf}}</li>
+       <li> Partido: {{dep.siglaPartido}}</li>
+       </ul>
+</div>

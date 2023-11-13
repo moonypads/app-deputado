@@ -13,4 +13,8 @@ export class DeputadoService {
   obterDeputados(): Observable<any> {
     return this.http.get(`${this.API_URL}/deputados`)
   }
+
+  obterDeputadoPorNome(nome:string): Observable <any>{
+    return this.http.get(`${this.API_URL}/deputados?nome=${nome}`)
+  }
 }
